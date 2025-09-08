@@ -1,0 +1,53 @@
+package EjParticipacion4;
+
+public class Circulo2D {
+    private double x;
+    private double y;
+    private double radio;
+
+    // Constructor por defecto
+    public Circulo2D() {
+        this.x = 0;
+        this.y = 0;
+        this.radio = 1;
+    }
+
+    // Constructor con parámetros
+    public Circulo2D(double x, double y, double radio) {
+        this.x = x;
+        this.y = y;
+        this.radio = radio;
+    }
+
+    public double getX() { return x; }
+    public double getY() { return y; }
+    public double getRadio() { return radio; }
+
+    // Área
+    public double getArea() {
+        return Math.PI * Math.pow(radio, 2);
+    }
+
+    // Perímetro
+    public double getPerimetro() {
+        return 2 * Math.PI * radio;
+    }
+
+    // Contiene un punto
+    public boolean contiene(double px, double py) {
+        double distancia = Math.sqrt(Math.pow(px - x, 2) + Math.pow(py - y, 2));
+        return distancia <= radio;
+    }
+
+    // Contiene un círculo
+    public boolean contiene(Circulo2D c) {
+        double distancia = Math.sqrt(Math.pow(c.x - x, 2) + Math.pow(c.y - y, 2));
+        return distancia + c.radio <= radio;
+    }
+
+    // Se sobrepone a otro círculo
+    public boolean sobrepone(Circulo2D c) {
+        double distancia = Math.sqrt(Math.pow(c.x - x, 2) + Math.pow(c.y - y, 2));
+        return distancia < (radio + c.radio);
+    }
+}
