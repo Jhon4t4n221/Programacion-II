@@ -51,3 +51,21 @@ public class Circulo2D {
         return distancia < (radio + c.radio);
     }
 }
+
+
+	package EjParticipacion4;
+	
+	public class TestCirculo2D {
+	    public static void main(String[] args) {
+	        Circulo2D c1 = new Circulo2D(); // (0,0,1)
+	        Circulo2D c2 = new Circulo2D(2, 2, 2);
+	        Circulo2D c3 = new Circulo2D(0, 0, 5);
+	
+	        System.out.println("Área c1: " + c1.getArea());
+	        System.out.println("Perímetro c1: " + c1.getPerimetro());
+	
+	        System.out.println("¿c1 contiene punto (0.5,0.5)? " + c1.contiene(0.5, 0.5));
+	        System.out.println("¿c3 contiene c1? " + c3.contiene(c1));
+	        System.out.println("¿c1 se sobrepone con c2? " + c1.sobrepone(c2));
+	    }
+	}
