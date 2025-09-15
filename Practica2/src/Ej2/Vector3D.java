@@ -40,3 +40,31 @@ class Vector3D:
             self.z*other.x - self.x*other.z,
             self.x*other.y - self.y*other.x
         )
+
+def main():
+    a = Vector3D(1, 2, 3)
+    b = Vector3D(4, 5, 6)
+
+    print("Vector a:", a)
+    print("Vector b:", b)
+
+    # Suma
+    print("a + b =", a + b)
+
+    # Multiplicación por escalar
+    print("3 * a =", 3 * a)
+
+    # Longitud
+    print("|a| =", abs(a))
+
+    # Normal
+    print("Normal de a:", a.normal())
+
+    # Producto escalar
+    print("a · b =", a.dot(b))
+
+    # Producto vectorial
+    print("a × b =", a.cross(b))
+
+if __name__ == "__main__":
+    main()
