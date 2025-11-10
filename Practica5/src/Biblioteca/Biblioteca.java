@@ -27,7 +27,7 @@ class Biblioteca {
  public void prestarLibro(Estudiante estudiante, Libro libro) {
      Prestamo p = new Prestamo(estudiante, libro);
      prestamos.add(p);
-     System.out.println("✅ Libro prestado a " + estudiante.getNombre() + ": " + libro.getTitulo());
+     System.out.println("Libro prestado a " + estudiante.getNombre() + ": " + libro.getTitulo());
  }
 
  public void mostrarEstado() {
@@ -162,4 +162,5 @@ class Prestamo {
                         ", Estudiante: " + estudiante.getNombre() + 
                         ", Fecha: " + fechaPrestamo);
  }
+
 }
