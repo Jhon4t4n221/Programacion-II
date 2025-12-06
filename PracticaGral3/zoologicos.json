@@ -1,0 +1,1 @@
+[{"id":1,"nombre":"La Paz Zoo","direccion":"La Paz","animales":[{"especie":"Ave","nombre":"Aguila","cantidad":3}]},{"id":2,"nombre":"Santa Cruz Zoo","direccion":"Santa Cruz","animales":[{"especie":"Reptil","nombre":"Iguana","cantidad":4},{"especie":"Felino","nombre":"Leon","cantidad":5}]}]
