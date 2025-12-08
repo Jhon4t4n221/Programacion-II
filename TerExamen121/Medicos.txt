@@ -1,0 +1,6 @@
+1;Juan;Perez;10
+3;Carlos;Rojas;3
+1;Juan;Perez;10
+3;Carlos;Rojas;3
+1;Juan;Perez;10
+3;Carlos;Rojas;3
