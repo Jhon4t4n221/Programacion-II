@@ -3,41 +3,37 @@ package ej1;
 import java.util.Scanner;
 
 public class Consulta {
+
     private int idConsulta;
-    private Medico medico;
-    private Consultorio consultorio;
+    private String nombreMedico;
+    private String apellidoMedico;
+    private String dia;
 
-    public Consulta(int idConsulta, Medico medico, Consultorio consultorio) {
+    // constructor
+    public Consulta(int idConsulta, String nombreMedico, String apellidoMedico, String dia) {
         this.idConsulta = idConsulta;
-        this.medico = medico;
-        this.consultorio = consultorio;
+        this.nombreMedico = nombreMedico;
+        this.apellidoMedico = apellidoMedico;
+        this.dia = dia;
     }
 
-    public int getIdConsulta() {
-        return idConsulta;
-    }
+    public int getIdConsulta() { return idConsulta; }
+    public String getNombreMedico() { return nombreMedico; }
+    public String getApellidoMedico() { return apellidoMedico; }
+    public String getDia() { return dia; }
+    public void setDia(String dia) { this.dia = dia; }
 
     @Override
     public String toString() {
-        return "Consulta ID: " + idConsulta +
-               "\n  " + medico.toString() +
-               "\n  " + consultorio.toString();
+        return idConsulta + " | Dr. " + nombreMedico + " " + apellidoMedico + " | Día: " + dia;
     }
 
-    public static Consulta crearPorTeclado(Scanner sc) {
-        System.out.print("Ingrese ID de la consulta: ");
-        int id = sc.nextInt();
-        sc.nextLine();
+	public static Consulta crearPorTeclado(Scanner sc) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-        System.out.println("=== Datos del Médico ===");
-        Medico m = Medico.crearPorTeclado(sc);
-
-        System.out.println("=== Datos del Consultorio ===");
-        Consultorio c = Consultorio.crearPorTeclado(sc);
-
-        return new Consulta(id, m, c);
-    }
+    // método estático crearPorTeclado()
 }
-
 
 

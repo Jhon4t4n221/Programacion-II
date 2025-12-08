@@ -18,6 +18,9 @@ public class Main {
             System.out.println("4. Eliminar consulta por ID");
             System.out.println("5. Salir");
             System.out.print("Elija opción: ");
+            System.out.println("6. Dar de baja a un médico y eliminar sus consultas");
+            System.out.println("7. Cambiar el día de consultas en Navidad/Año Nuevo");
+
             opcion = sc.nextInt();
             sc.nextLine();
 
@@ -83,9 +86,47 @@ public class Main {
 
                 default:
                     System.out.println("Opción no válida.");
+                    
+                case 6:
+                    System.out.print("Nombre del médico a dar de baja: ");
+                    String nomMed = sc.nextLine();
+
+                    System.out.print("Apellido del médico: ");
+                    String apeMed = sc.nextLine();
+
+                    boolean eliminado = consultas.removeIf(c ->
+                        c.getNombreMedico().equalsIgnoreCase(nomMed) &&
+                        c.getApellidoMedico().equalsIgnoreCase(apeMed)
+                    );
+
+                    if (eliminado)
+                        System.out.println("Se dieron de baja todas las consultas de ese médico.");
+                    else
+                        System.out.println("No se encontraron consultas de ese médico.");
+                    break;
+                    
+                case 7:
+                    System.out.println("Cambiando fechas especiales...");
+
+                    for (Consulta con : consultas) {
+                        if (con.getDia().equals("25/12") || con.getDia().equals("31/12")) {
+                            System.out.println("Consulta ID " + con.getIdConsulta() +
+                                    " tenía fecha " + con.getDia());
+
+                            System.out.print("Nuevo día (dd/mm): ");
+                            String nuevoDia = sc.nextLine();
+                            con.setDia(nuevoDia);
+                        }
+                    }
+
+                    System.out.println("Fechas actualizadas.");
+                    break;
+
+
             }
 
         } while (opcion != 5);
+        
 
         sc.close();
     }
